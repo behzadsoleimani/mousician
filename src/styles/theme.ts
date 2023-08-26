@@ -3,6 +3,7 @@ export const theme = {
     light: "#ffffff",
     placeholder: "#939393",
     background: "#000000",
+    secondary: "#101010",
   },
   fontWeights: {
     regular: 400,

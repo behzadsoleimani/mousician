@@ -4,7 +4,7 @@ const Container = styled.section`
   margin-top: 20px;
   display: flex;
   align-items: center;
-  width: 660px;
+  width: 690px;
   padding: 0 30px;
   border-radius: 30px;
   background-color: ${({ theme }) => theme.colors.light};

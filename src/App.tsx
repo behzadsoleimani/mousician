@@ -1,6 +1,9 @@
 import { ChangeEvent, useState } from "react";
-import { Search } from "./components";
-import { Description, Header, Title } from "./App.styles";
+import { Search, SongCard } from "./components";
+import { Description, Header, Main, Title } from "./App.styles";
+import { LOCAL_API_ENDPOINT } from "./constants";
+import useApiData from "./hooks/useApiData";
+import { Song } from "./generalTypes";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -8,6 +11,10 @@ function App() {
   const hanldeSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
+
+  const { data: songs } = useApiData<Song[]>(
+    `${LOCAL_API_ENDPOINT}/songs?songs?level=1&level=2`
+  );
 
   return (
     <>
@@ -19,6 +26,11 @@ function App() {
         </Description>
         <Search value={searchValue} onChange={hanldeSearchChange} />
       </Header>
+      <Main>
+        {songs.map((item, index) => {
+          return <SongCard key={item.id} {...item} isEven={index % 2 === 0} />;
+        })}
+      </Main>
     </>
   );
 }

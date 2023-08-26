@@ -22,4 +22,11 @@ const Description = styled.h2`
   font-weight: ${({ theme }) => theme.fontWeights.regular};
 `;
 
-export { Header, Title, Description };
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export { Header, Title, Description, Main };
