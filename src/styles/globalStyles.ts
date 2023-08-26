@@ -22,7 +22,7 @@ a {
   box-sizing: border-box;
 }
 
-p, h1, h2, h3, h4 , h5 , h6 {
+p, h1, h2, h3, h4 , h5 , h6, span {
   color: ${({ theme }) => theme.colors.light};
   letter-spacing: 1px;
 }

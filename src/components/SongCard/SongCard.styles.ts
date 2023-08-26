@@ -5,9 +5,16 @@ const Container = styled.div<{ isEven: boolean }>`
   align-items: center;
   width: 930px;
   padding: 10px;
+  padding-right: 30px;
   background-color: ${({ isEven, theme }) =>
     isEven ? theme.colors.secondary : ""};
   border-radius: 2px;
+  justify-content: space-between;
+`;
+
+const LeftSide = styled.div`
+  display: flex;
+  align-items: center;
   gap: 30px;
 `;
 
@@ -33,4 +40,18 @@ const Description = styled.p`
   margin: 0;
 `;
 
-export { Container, SongImage, SongInfo, Title, Description };
+const IconWrappers = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+`;
+
+export {
+  Container,
+  SongImage,
+  SongInfo,
+  Title,
+  Description,
+  IconWrappers,
+  LeftSide,
+};
