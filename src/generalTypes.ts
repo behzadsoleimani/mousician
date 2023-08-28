@@ -13,4 +13,9 @@ export interface Song {
   search: string;
 }
 
+export interface FavoritedSong {
+  id: string;
+  songId: string;
+}
+
 export type HttpMethod = "GET" | "POST" | "DELETE";

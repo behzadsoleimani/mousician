@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const Container = styled.div<{ isEven: boolean }>`
+const Container = styled.div<{ $isEven: boolean }>`
   display: flex;
   align-items: center;
   width: 930px;
   padding: 10px;
   padding-right: 30px;
-  background-color: ${({ isEven, theme }) =>
-    isEven ? theme.colors.secondary : ""};
+  background-color: ${({ $isEven, theme }) =>
+    $isEven ? theme.colors.secondary : ""};
   border-radius: 2px;
   justify-content: space-between;
 `;
