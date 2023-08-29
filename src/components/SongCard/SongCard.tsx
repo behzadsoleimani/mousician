@@ -26,10 +26,6 @@ export const SongCard = (props: Props) => {
   } = props;
   const [favorited, setFavorited] = useState(!!favoritedId);
 
-  if (songId === "5b8e4745b3984c68ed819287") {
-    console.log(props);
-  }
-
   const handleFavoriteClick = async () => {
     setFavorited(!favorited);
     if (!favorited) {

@@ -2,6 +2,7 @@ export interface ApiResponse<T> {
   data: T;
   isLoading: boolean;
   error: Error | null;
+  totalCount: number;
 }
 
 export interface Song {
