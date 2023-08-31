@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Search, SongCard, Filters, Loading } from "./components";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Description, Header, Main, Title } from "./App.styles";
+import { Description, Header, Main, SongsList, Title } from "./App.styles";
 import { LOCAL_API_ENDPOINT } from "./constants";
 import useApiData from "./hooks/useApiData";
 import { FavoritedSong, Song } from "./generalTypes";
@@ -73,6 +73,7 @@ function App() {
       </Header>
       <Main>
         <Filters onSelect={onFilterSelect} />
+        <SongsList>
         <InfiniteScroll
           dataLength={allSongs.length}
           next={fetchMoreSongs}
@@ -94,6 +95,7 @@ function App() {
             );
           })}
         </InfiniteScroll>
+        </SongsList>
       </Main>
     </>
   );

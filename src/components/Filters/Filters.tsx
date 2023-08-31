@@ -4,6 +4,7 @@ import LevelIcon from "../svgIcons/LevelIcon";
 import { getRange } from "../../helpers";
 import {
   Container,
+  FilterHeader,
   FiltersList,
   Label,
   RangeLabel,
@@ -39,6 +40,7 @@ export const Filters = ({ onSelect }: Props) => {
 
   return (
     <Container>
+      <FilterHeader>
       <Label id="label">
         {showFilters ? "Hide filter" : "Filter by level"}
       </Label>
@@ -49,6 +51,7 @@ export const Filters = ({ onSelect }: Props) => {
           color={!!rangeLabel ? "dark" : "light"}
         />
       </RangleWrapper>
+      </FilterHeader>
       {showFilters && (
         <FiltersList>
           {Array.from({ length: 15 }, (_, l) => {

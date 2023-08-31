@@ -2,11 +2,21 @@ import styled from "styled-components";
 
 const Container = styled.section`
   display: flex;
-  justify-content: flex-end;
+  width: 100%;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px 15px;
-  width: 930px;
+  @media only screen and (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 930px;
+    justify-content: flex-end;
+  }
+`;
+
+const FilterHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
 `;
 
 const Label = styled.span`
@@ -21,6 +31,15 @@ const FiltersList = styled.section`
   justify-content: flex-end;
   padding: 20px 0px;
   gap: 9px;
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 15px;
+    padding: 20px;
+    margin: auto;
+  }
 `;
 
 const WrapperIcon = styled.div`
@@ -55,4 +74,5 @@ export {
   WrapperIcon,
   RangleWrapper,
   RangeLabel,
+  FilterHeader,
 };

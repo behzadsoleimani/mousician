@@ -8,6 +8,9 @@ const Container = styled.section`
   padding: 0 30px;
   border-radius: 30px;
   background-color: ${({ theme }) => theme.colors.light};
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    width: 90%;
+  }
 `;
 
 const Input = styled.input`
