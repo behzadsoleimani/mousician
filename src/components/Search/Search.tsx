@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 import { Container, Icon, Input } from "./Search.styles";
 import { Props } from "./Search.types";
@@ -10,7 +11,7 @@ export const Search = (props: Props) => {
       <Input
         value={value}
         placeholder="Search for songs by artist or title"
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value)}
       />
       <Icon
         src="/assets/icons/search.svg"

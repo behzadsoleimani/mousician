@@ -27,25 +27,29 @@ export const SongCard = (props: Props) => {
   const [favorited, setFavorited] = useState(!!favoritedId);
 
   const handleFavoriteClick = async () => {
-    setFavorited(!favorited);
-    if (!favorited) {
-      await fetch(`${LOCAL_API_ENDPOINT}/favorites`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ songId }),
-      });
-    } else {
-      await fetch(`${LOCAL_API_ENDPOINT}/favorites/${favoritedId}`, {
-        method: "DELETE",
-      });
+    try {
+      setFavorited(!favorited);
+      if (!favorited) {
+        await fetch(`${LOCAL_API_ENDPOINT}/favorites`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ songId }),
+        });
+      } else {
+        await fetch(`${LOCAL_API_ENDPOINT}/favorites/${favoritedId}`, {
+          method: "DELETE",
+        });
+      }
+      getFavorites();
+    } catch {
+      console.log("error");
     }
-    getFavorites();
   };
 
   return (
-    <Container $isEven={isEven}>
+    <Container $isEven={isEven} data-testid="song-card">
       <LeftSide>
         <SongImage src={images} />
         <SongInfo>
@@ -53,7 +57,7 @@ export const SongCard = (props: Props) => {
           <Description>{artist}</Description>
         </SongInfo>
       </LeftSide>
-      <IconWrappers>
+      <IconWrappers data-testid={`level-icon-${level}`}>
         <LevelIcon level={level} />
         <FavoriteIcon favorited={favorited} onClick={handleFavoriteClick} />
       </IconWrappers>

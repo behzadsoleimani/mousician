@@ -41,7 +41,7 @@ export const Filters = ({ onSelect }: Props) => {
   return (
     <Container>
       <FilterHeader>
-      <Label id="label">
+      <Label data-testid="label">
         {showFilters ? "Hide filter" : "Filter by level"}
       </Label>
       <RangleWrapper $hasRangeLabel={!!rangeLabel}>
@@ -53,7 +53,7 @@ export const Filters = ({ onSelect }: Props) => {
       </RangleWrapper>
       </FilterHeader>
       {showFilters && (
-        <FiltersList>
+        <FiltersList data-testid="list">
           {Array.from({ length: 15 }, (_, l) => {
             return (
               <WrapperIcon key={l}>

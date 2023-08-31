@@ -32,6 +32,7 @@ const FilterIcon = ({ color = "light", onClick }: Props) => {
       height="16"
       viewBox="0 0 16 16"
       fill={color}
+      data-testid="filter"
     >
       <path d="M0 0h16v16H0z" fill="none" />
       <Path
